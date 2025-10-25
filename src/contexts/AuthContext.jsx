@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const 
-    subscribe = onAuthStateChange(async (user) => {
+    subscribe  = onAuthStateChange(async (user) => {
       setUser(user);
       setLoading(false);
       
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
       }
     });
 
-    return () => unsubscribe();
+    return () => subscribe();
   }, []);
 
   const updateUserData = async (newData) => {
